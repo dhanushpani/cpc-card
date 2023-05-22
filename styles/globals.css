@@ -87,21 +87,68 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
+.main-container{
+  min-width: 100vh;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+
+@font-face {
+  font-family: "Arial";
+  src: url('../fonts/Arial_4.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+  
+@font-face {
+  font-family: "Arial";
+  src: url('../fonts/Arial\ Bold_0.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+  
+@font-face {
+  font-family: "Helvetica";
+  src: url('../fonts/Arial\ Narrow.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: "Helvetica";
+  src: url('../fonts/Helvetica.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+  
+@font-face {
+  font-family: "Helvetica";
+  src: url('../fonts/Helvetica-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+  
+@font-face {
+  font-family: "Lato";
+  src: url('../fonts/Lato-BlackItalic_E.ttf');
+  font-weight: normal;
+  font-style: italic;
 }

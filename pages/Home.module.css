@@ -1,0 +1,186 @@
+
+.main_container{
+    background: #fff;
+    margin: 0px;
+    width: 100%;
+    padding-top: 15%;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.disclaimer{
+    min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #fcfcfc;
+}
+.card {
+	position: absolute;
+}
+.card_image {
+	width: 500px;
+	height: 400px;
+	object-fit: contain;
+}
+.font_test {
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	color: black;
+	font-size: 3rem;
+}
+.input_section {
+	position: absolute;
+	bottom: 20%;
+    left: 14%;
+}
+.input_number {
+	background-color: transparent;
+	color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    letter-spacing: 5px;
+    border:0px;
+    margin: 0px;
+    font-weight: 600;
+}
+.input_validity {
+	background-color: transparent;
+	text-align: start;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+    border:0px;
+    font-size:15px;
+    margin-bottom: 0px !important;
+    font-weight: 500;
+}
+.cardName{
+    background-color: transparent;
+	text-align: start;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+    border:0px;
+    font-size:15px;
+    letter-spacing: 1px;
+}
+.cvv_container{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+}
+.cvv_label{
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+}
+.cvv_value{
+    padding: 10px 15px;
+    background-color:#97144d;
+    color: white;
+    
+}
+.time_container{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    padding: 10px 10px;
+    width: 100%;
+    font-size: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  
+    border-radius: 5px;
+    margin-top: 15%;
+}
+.seconds{
+    font-weight: 600;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .main {
+        width: 100%;
+    }
+	.card_image {
+		width: 350px;
+        display: flex;
+        height: 350px;
+	}
+    .input_section {
+        position: absolute;
+        bottom: 30%;
+        left: 14%;
+    }
+    .input_section {
+        bottom: 27%;
+    }
+    .input_number {
+        font-size: 15px;
+        letter-spacing: 5px;
+    }
+    .input_validity {
+        font-size:12px;
+    }
+    .cardName{
+        font-size: 12px;
+    }
+    .cvv_label{
+        padding: 10px 15px;
+        background-color: black;
+        font-size: 12px;
+        color: white;
+    }
+    .cvv_container{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+    }
+    .cvv_value{
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .main {
+        width: 100%;
+    }
+	.card_image {
+		width: 300px;
+        display: flex;
+        height: 320px;
+	}
+    .input_section {
+        position: absolute;
+        bottom: 27%;
+        left: 14%;
+    }
+    .input_number {
+        font-size: 10px;
+        letter-spacing: 5px;
+    }
+    .input_validity {
+        font-size:8px;
+    }
+    .cardName{
+        font-size: 12px;
+    }
+    .cvv_container{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+    }
+    .cvv_label{
+        padding: 5px 10px;
+        background-color: black;
+        font-size: 10px;
+        color: white;
+    }
+    .cvv_value{
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+}
