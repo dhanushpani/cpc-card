@@ -9,7 +9,7 @@ import { enc } from 'crypto-js';
 
 export async function getServerSideProps({ params }) {
 	// Fetch the data for the ID
-	const data = {};
+	const data = {};	
 	try {
 		// const res = await getDetailsById();
 		const res = await LCMGetCardDetailsResponse();
