@@ -3,13 +3,9 @@ import { useEffect, useState } from 'react';
 import { LCMGetCardDetailsResponse } from './api/sample/sample';
 import styles from './Home.module.css';
 
-// cryptoJS for encryption and decryption
-import AES from 'crypto-js/aes';
-import { enc } from 'crypto-js';
-
 export async function getServerSideProps({ params }) {
 	// Fetch the data for the ID
-	const data = {};	
+	const data = {};
 	try {
 		// const res = await getDetailsById();
 		const res = await LCMGetCardDetailsResponse();
@@ -37,23 +33,6 @@ export default function Page(props) {
 		setWidthSize(window.innerWidth);
 	});
 
-	// AES Sample Test
-	useEffect(() => {
-		const decryptId = (str) => {
-			const decodedStr = decodeURIComponent(str);
-			return AES.decrypt(decodedStr, 'secretPassphrase').toString(enc.Utf8);
-		};
-
-		// encryption sample
-		const ciphertext = AES.encrypt('hello', 'secretPassphrase');
-		const encryptNewId = encodeURIComponent(ciphertext.toString());
-		console.log(encodeURIComponent(ciphertext.toString()), 'cipherText');
-
-		// decryption sample
-		const decryptedText = decryptId(encryptNewId);
-		console.log(decryptedText, 'text');
-	}, []);
-
 	useEffect(() => {
 		if (seconds > 0) {
 			const intervalId = setInterval(() => {
@@ -62,7 +41,7 @@ export default function Page(props) {
 			return () => clearInterval(intervalId);
 		}
 		if (seconds === 0) {
-			window.location.href = 'https://google.com';
+			window.location.href = 'https://www.google.com/';
 		}
 	}, [seconds]);
 
