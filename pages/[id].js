@@ -106,7 +106,7 @@ export const decryptData = (encryptedData , aesKey) => {
     const data = Buffer.from(encryptedData, 'base64').slice(16);
     const decipher = crypto.createDecipheriv(
                                 AES_ALGORITHM,
-                                Buffer.from(aesKey, 'base64'),
+                                aesKey,
                                 iv
                             );
     let decryptedData = decipher.update(data);
@@ -145,7 +145,8 @@ const getOTPValue = async (key, payload)=>{
 		     	}
 		    } 
 		   )
-		console.log(response,"response")
+		// console.log(response,"response")
+    return response
 	}
 	catch(err){
 		console.log(err)
@@ -175,17 +176,20 @@ export default function Page(props) {
           LCMGenerateAuthOTPRequestBody: {
             cardSerNo: "81672",
             deviceId: "asfqd",
-            otpReferenceId: "64231721123131",
+            otpReferenceId: "1244",
           },
         },
       };
       const encrypt = await encryptData(data, publicCertificate);
 	  const { encryptedAESKey, encryptedPayload ,aesKey } = encrypt 
-	  console.log('---encryptedAESKey',encryptedAESKey)
-	  console.log('---encryptedPayload',encryptedPayload)
-	  const decrypt = await decryptData(encryptedPayload, aesKey )
+	  // console.log('---encryptedAESKey',encryptedAESKey)
+	  // console.log('---encryptedPayload',encryptedPayload)
+	  const optResult  = await getOTPValue(encryptedAESKey, encryptedPayload)
+    // console.log('---optResult',optResult)
+    const responseData = optResult?.data?.data?.Data
+    // console.log('---responseData',responseData)
+	  const decrypt = await decryptData(responseData, aesKey)
 	  console.log(decrypt,"decrypt")
-	//   const optResult  = await getOTPValue(encryptedAESKey, encryptedPayload)
     }
   };
 
